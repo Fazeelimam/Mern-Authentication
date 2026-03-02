@@ -57,12 +57,19 @@ const Home = () => {
 
   const Logout = async () => {
     try {
-      const res = await axiosInstance.get("/logout");
-      toast.success(res.data.message);
+      await axiosInstance.get("/logout");
+      toast.success("Logged out successfully!");
+    } catch (error) {
+      // Ignore 401 errors on logout - just clear state anyway
+      if (error.response?.status === 401) {
+        toast.success("Logged out successfully!");
+      } else {
+        toast.error(error.response?.data?.message || "Logout failed");
+      }
+    } finally {
+      // Always clear state, even if API call fails
       setUser(null);
       setIsAuthenticated(false);
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Logout failed");
     }
   };
 
