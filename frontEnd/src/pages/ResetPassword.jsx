@@ -4,7 +4,7 @@ import axios from "axios";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Context } from "./Context";
-import { axiosInstance } from "../../Lib/axios";
+import { axiosInstance } from "../lib/axios";
 const ResetPassword = () => {
   const { isAuthenticated } = useContext(Context);
   const { token } = useParams();

@@ -73,7 +73,7 @@ import { Context } from "./Context";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { axiosInstance } from "../../Lib/axios";
+import { axiosInstance } from "../lib/axios";
 
 const ForgotPassword = () => {
   const { isAuthenticated } = useContext(Context);

@@ -115,7 +115,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useState } from "react";
-import { axiosInstance } from "../../Lib/axios";
+import { axiosInstance } from "../lib/axios";
 
 const Register = () => {
   const navigate = useNavigate();

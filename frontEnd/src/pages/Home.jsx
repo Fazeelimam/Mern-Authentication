@@ -50,7 +50,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { Context } from "../pages/Context.jsx";
 import { Navigate } from "react-router-dom";
-import { axiosInstance } from "../../Lib/axios.js";
+import { axiosInstance } from "../lib/axios.js";
 
 const Home = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);

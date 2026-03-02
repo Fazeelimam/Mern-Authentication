@@ -95,7 +95,7 @@ import axios from "axios";
 import { Navigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Context } from "./Context.jsx";
-import { axiosInstance } from "../../Lib/axios.js";
+import { axiosInstance } from "../lib/axios.js";
 
 const OtpVerification = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
