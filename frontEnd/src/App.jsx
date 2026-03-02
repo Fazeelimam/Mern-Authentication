@@ -10,7 +10,7 @@ import axios from "axios";
 import { Context } from "./pages/Context.jsx";
 import OtpVerification from "./pages/OtpVerification";
 import Auth from "./pages/Auth";
-import { axiosInstance } from "../Lib/axios.js";
+import { axiosInstance } from "./lib/axios.js";
 
 const App = () => {
   const { setIsAuthenticated, setUser } = useContext(Context);
