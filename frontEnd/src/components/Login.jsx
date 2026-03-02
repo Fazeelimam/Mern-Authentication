@@ -71,12 +71,14 @@
 //   );
 // };
 // export default Login;
+
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Context } from "../pages/Context.jsx";
 import { Link, useNavigate } from "react-router-dom";
+import { axiosInstance } from "../../Lib/axios.js";
 
 const Login = () => {
   const { setIsAuthenticated, setUser } = useContext(Context);
@@ -92,10 +94,7 @@ const Login = () => {
   const handleLogin = async (data) => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/login", data, {
-        withCredentials: true,
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axiosInstance.post("/login", data);
 
       toast.success(res.data.message || "Login successful!", {
         theme: "light",

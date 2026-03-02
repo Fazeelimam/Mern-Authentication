@@ -36,6 +36,7 @@
 //   );
 // };
 // export default Auth;
+
 import React, { useContext, useState } from "react";
 import "../styles/Auth.css";
 import { Context } from "../pages/Context.jsx";

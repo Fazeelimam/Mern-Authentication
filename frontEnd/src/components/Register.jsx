@@ -115,6 +115,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { axiosInstance } from "../../Lib/axios";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -132,10 +133,7 @@ const Register = () => {
       // Add country code to phone
       data.phone = `+92${data.phone}`;
 
-      const res = await axios.post("http://localhost:3000/api/register", data, {
-        withCredentials: true,
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axiosInstance.post("/register", data);
 
       toast.success(res.data.message || "Registration successful!", {
         theme: "light",

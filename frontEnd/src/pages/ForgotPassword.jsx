@@ -73,6 +73,7 @@ import { Context } from "./Context";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { axiosInstance } from "../../Lib/axios";
 
 const ForgotPassword = () => {
   const { isAuthenticated } = useContext(Context);
@@ -96,14 +97,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/password/forgot",
-        { email },
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        },
-      );
+      const res = await axiosInstance.post("/password/forgot", { email });
       toast.success(res.data.message || "Reset email sent!");
       setEmail(""); // clear input
     } catch (error) {

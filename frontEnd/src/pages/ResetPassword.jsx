@@ -4,6 +4,7 @@ import axios from "axios";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Context } from "./Context";
+import { axiosInstance } from "../../Lib/axios";
 const ResetPassword = () => {
   const { isAuthenticated } = useContext(Context);
   const { token } = useParams();
@@ -13,15 +14,8 @@ const ResetPassword = () => {
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
-    await axios
-      .put(
-        `http://localhost:3000/api/password/reset/${token}`,
-        { password, confirmPassword },
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        },
-      )
+    await axiosInstance
+      .put(`/password/reset/${token}`, { password, confirmPassword })
       .then((res) => {
         toast.success(res.data.message);
         navigateTo("/auth");

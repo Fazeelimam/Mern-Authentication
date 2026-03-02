@@ -50,15 +50,14 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { Context } from "../pages/Context.jsx";
 import { Navigate } from "react-router-dom";
+import { axiosInstance } from "../../Lib/axios.js";
 
 const Home = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
 
   const Logout = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/logout", {
-        withCredentials: true,
-      });
+      const res = await axiosInstance.get("/logout");
       toast.success(res.data.message);
       setUser(null);
       setIsAuthenticated(false);

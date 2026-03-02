@@ -4,7 +4,6 @@
 // import { Navigate, useParams } from "react-router-dom";
 // import { toast } from "react-toastify";
 // import { Context } from "./Context.jsx";
-
 // const OtpVerification = () => {
 //   const { isAuthenticated, setIsAuthenticated, user, setUser } =
 //     useContext(Context);
@@ -96,6 +95,7 @@ import axios from "axios";
 import { Navigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Context } from "./Context.jsx";
+import { axiosInstance } from "../../Lib/axios.js";
 
 const OtpVerification = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
@@ -125,14 +125,7 @@ const OtpVerification = () => {
     const data = { email, phone, otp: enteredOTP };
 
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/verify-otp",
-        data,
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        },
-      );
+      const res = await axiosInstance.post("/verify-otp", data);
       toast.success(res.data.message);
       setIsAuthenticated(true);
       setUser(res.data.user);

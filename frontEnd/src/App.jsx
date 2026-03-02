@@ -10,16 +10,15 @@ import axios from "axios";
 import { Context } from "./pages/Context.jsx";
 import OtpVerification from "./pages/OtpVerification";
 import Auth from "./pages/Auth";
+import { axiosInstance } from "../Lib/axios.js";
 
 const App = () => {
   const { setIsAuthenticated, setUser } = useContext(Context);
 
   useEffect(() => {
     const getUser = async () => {
-      await axios
-        .get("http://localhost:3000/api/getuser", {
-          withCredentials: true,
-        })
+      await axiosInstance
+        .get("/getuser")
         .then((res) => {
           (setUser(res.data.user), setIsAuthenticated(true));
         })
