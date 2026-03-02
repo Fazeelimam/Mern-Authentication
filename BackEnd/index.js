@@ -13,7 +13,10 @@ await ConnectDB();
 //MIDDLEWARE
 const app = express()
 app.use(cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: [
+        "https://mern-auth-sable-delta.vercel.app",
+        "http://localhost:5173"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }))
