@@ -1,4 +1,4 @@
-<img width="959" height="440" alt="4" src="https://github.com/user-attachments/assets/2284fd20-b6b7-4f28-a83c-3cc882676e96" /><img width="959" height="439" alt="3" src="https://github.com/user-attachments/assets/a2594e33-da55-4740-b40b-52172465a594" />🚀 MERN Authentication System
+🚀 MERN Authentication System
 
 A secure, full-stack authentication system built using the MERN Stack (MongoDB, Express, React, Node.js).
 This project implements modern authentication practices including OTP verification, JWT-based login, password reset, protected routes, and secure session management.
@@ -92,3 +92,5 @@ All_Authentication-in-Mern/
 <img width="959" height="439" alt="8" src="https://github.com/user-attachments/assets/4b34cfc1-d324-4a70-824b-8ed13fd1ad6b" />
 <img width="959" height="439" alt="9" src="https://github.com/user-attachments/assets/da2f4358-61fb-42eb-8900-de98925b1d3d" />
 <img width="960" height="441" alt="10" src="https://github.com/user-attachments/assets/fb1568b8-9663-40c3-a1cb-f3f91e982d98" />
+<img width="959" height="440" alt="4" src="https://github.com/user-attachments/assets/2284fd20-b6b7-4f28-a83c-3cc882676e96" />
+<img width="959" height="439" alt="3" src="https://github.com/user-attachments/assets/a2594e33-da55-4740-b40b-52172465a594" />
